@@ -9,6 +9,11 @@ apply plugin: 'maven'
 group = pGroup
 version = pVersion
 
+if (project.hasProperty("topobyte")) {
+    apply from: 'file:///' + System.getProperty("user.home") \
+        + '/.gradle/topobyte.gradle'
+}
+
 repositories {
     maven {
         url 'http://mvn.topobyte.de'
@@ -25,14 +30,6 @@ targetCompatibility = 1.8
 dependencies {
     compile 'de.topobyte:luqe-core:0.2.1'
     compile 'com.slimjars.trove4j:trove4j-int-hash-set:1.0.1'
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: maven_url_topobyte)
-        }
-    }
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
