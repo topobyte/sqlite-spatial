@@ -28,7 +28,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    api 'de.topobyte:luqe-core:0.2.1'
+    api 'de.topobyte:luqe-core:0.4.0'
     api 'com.slimjars.trove4j:trove4j-int-hash-set:1.0.1'
 }
 
